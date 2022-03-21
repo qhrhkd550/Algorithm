@@ -19,6 +19,9 @@
                0 0 0 0 0 0 0
                0 0 0 0 0 0 0
         key를 (0,0)에서 (2,2)까지, (0,1)에서 (2,3)까지, ... , (5,5)에서 (7,7)까지 전부 대입하면서 확인
+        
+* 팁!
+  - 배열을 계속 초기화 해야 하는경우, deepcopy를 사용하는 것보다 매번 초기화하고 다시 값을 입력하는게 훨씬 빠르다!!!!
   
 '''
 
@@ -69,7 +72,7 @@ def solution(key, lock):
         
         for i in range(length-m+1):
             for j in range(length-m+1):
-                # 매번 key가 초기화 되어야 하기 때문에 deepcopy수행 -> 시간이 오래걸림
+                # 매번 key가 초기화 되어야 하기 때문에 deepcopy수행 -> 시간이 오래걸림 -> 65~67번째 줄을 copy대신 사용하는게 시간이 훨씬 빠름!
                 tmp_maps = copy.deepcopy(maps)
                 if check(i, j):
                     return True
