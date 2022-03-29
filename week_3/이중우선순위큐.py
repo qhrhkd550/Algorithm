@@ -10,6 +10,7 @@
 * 주의사항
   - heapq 자료구조는 최소힙을 기반으로 한다. 하지만, heapq[-1]이 최대값을 의미하는 것은 아니기 때문에,
   - answer를 구할 때, 인덱스로 접근하면 안된다.
+  - 해당 문제에서는 정답처리 되었지만 remove 연산시 heap의 구조가 깨지기 때문에 remove 다음에는 heapq.heapify(min_q) or heapq.heapify(max_q)를 해주어야한다!
 '''
 
 import heapq
@@ -28,6 +29,7 @@ def solution(operations):
         elif max_q and operation == "D 1":
             max_value = -heapq.heappop(max_q)
             min_q.remove(max_value)
+            heapq.heapify(
         
         elif min_q and operation == "D -1":
             min_value = heapq.heappop(min_q)
