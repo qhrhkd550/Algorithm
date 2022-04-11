@@ -22,4 +22,3 @@ def binary_search(start, end):
         return binary_search(start, mid-1)
 
 print(binary_search(1, max(lan)))
-
