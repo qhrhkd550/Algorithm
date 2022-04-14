@@ -9,9 +9,9 @@ import sys
 input = lambda : sys.stdin.readline().rstrip()
 from collections import defaultdict
 n, d, k ,c = map(int, input().split())
-shusi = []
+sushi = []
 for _ in range(n):
-    shusi.append(int(input()))
+    sushi.append(int(input()))
 
 end = 0
 eat = defaultdict(int)
@@ -19,15 +19,15 @@ eat[c] = 1
 max_eat = 0
 for start in range(n):
     while k > 0:
-        eat[shusi[end % n]] += 1
+        eat[sushi[end % n]] += 1
         end += 1
         k -= 1
     if max_eat < len(eat):
         max_eat = len(eat)
 
-    eat[shusi[start]] -= 1
-    if eat[shusi[start]] == 0:
-        del eat[shusi[start]]
+    eat[sushi[start]] -= 1
+    if eat[sushi[start]] == 0:
+        del eat[sushi[start]]
 
     k += 1
 
