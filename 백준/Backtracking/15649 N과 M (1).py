@@ -1,3 +1,8 @@
+'''
+* 아이디어 1
+  - 순열 문제이다.
+  - itertools를 써도 상관없다.
+'''
 import sys
 input = lambda : sys.stdin.readline().rstrip()
 
