@@ -49,5 +49,4 @@ for i in range(3, n+1):
             dp[i] = dp[i-3] + 1
         elif i >= 5 and dp[i-5] != -1:
             dp[i] = dp[i-5] + 1
-
 print(dp[n])
